@@ -31,7 +31,7 @@ int main(){
 
 	mylist.destroy_list();
 	cout << mylist;
-	system("pause");
+	//system("pause");    //uncomment if you need to stop the screan !!!
 	return 0;
 
 
