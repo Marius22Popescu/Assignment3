@@ -60,10 +60,11 @@ string add(string a, string b)
 		k = k%10;
 		s3.push(k);
 	}
+	cout << "The sum is: ";
 	}
 	while(!s3.isEmpty()){
 		k = s3.pop();
-		cout << "k the sum is"<< k << endl;
+		cout << k ;
 	}
 
 
