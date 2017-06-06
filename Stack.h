@@ -1,32 +1,33 @@
 /*
  * Stack.h
  *
- *  Created on: Jun 1, 2017
+ *  Created on: Jun 3, 2017
  *      Author: Marius
  */
-#ifndef STACK_H_
-#define STACK_H_
 
 #include <iostream>
 #include <assert.h>
 using namespace std;
 
+#ifndef STACK_H_
+#define STACK_H_
+
 template <class T>
 class Stack{
-private:
-	T *arr;
-	int size;
-	int top;
-public:
-	Stack(int);
-	bool isEmpty();
-	bool isFull();
-	void push(T&);
-	T pop();
-	T stop();
-	void destroy();
-	void copy(Stack<T>&);
-	~Stack();
+	private:
+		T *arr;
+		int size;
+		int top;
+	public:
+		Stack(int);
+		bool isEmpty();
+		bool isFull();
+		void push(T&);
+		T pop();
+		T stop();
+		void destroy();
+		void copy(Stack<T>&);
+		~Stack();
 };
 
 template <class T>
@@ -38,20 +39,19 @@ Stack<T>::Stack(int _size){
 
 template <class T>
 bool Stack<T>::isEmpty(){
-	return top == 0;
+	return top==0;
 }
 
 template <class T>
 bool Stack<T>::isFull(){
-	return size == top;
+	return size==top;
 }
 template <class T>
 void Stack<T>::push(T& item){
-	if (!isFull()){
+	if (! isFull())
 		arr[top++] = item;
-		//cout<<"pushing an item"<<item<<endl;
-	}else
-		cout << "Stack overflow!" << endl;
+	else
+		cout<<"Stack overflow!"<<endl;
 }
 template <class T>
 T Stack<T>::pop(){
@@ -61,7 +61,7 @@ T Stack<T>::pop(){
 template <class T>
 T Stack<T>::stop(){
 	assert(!isEmpty());
-	return arr[top - 1];
+	return arr[top-1];
 }
 
 template <class T>
@@ -75,7 +75,7 @@ void Stack<T>::copy(Stack<T>& anotherSt){
 	size = anotherSt.size;
 	top = anotherSt.top;
 	arr = new T[size];
-	for (int i = 0; i<top; i++)
+	for(int i=0;i<top;i++)
 		arr[i] = anotherSt.arr[i];
 
 }
@@ -86,4 +86,3 @@ Stack<T>::~Stack(){
 
 
 #endif /* STACK_H_ */
-
