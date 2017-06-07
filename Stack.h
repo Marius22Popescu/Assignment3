@@ -19,7 +19,7 @@ class Stack{
 		int size;
 		int top;
 	public:
-		Stack(int);
+		Stack(int= 40);
 		bool isEmpty();
 		bool isFull();
 		void push(T&);

@@ -32,8 +32,10 @@ template <class T>
 T QueueStack<T>::dequeue(){
 	//write your code here
 	int x;
+	while(!s1.isEmpty()){
 	x = s1.pop();    //First we will pop the items from the s1 and push there in s2 in order to reverse the elements from the stack
 	s2.push(x);
+	}
 	s2.pop();		 // Pop the elements from s2 in order to dequeue
 
 }
