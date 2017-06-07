@@ -15,11 +15,13 @@ using namespace std;
 
 int main() {
 	string expression;
-	Stack<int> s1(25);   //create stacks
-	Stack<int> s2(25);
+	Stack<char> s1(25);   //create stacks
+	Stack<char> s2(25);
 	Stack<char> s3(25);
+	Stack<char> s4(25);
 	int lengthString = 0;
-	int x = 0;
+	//int x = 0;
+	char x = ' ';
 	char c = ' ';
 	char d = ' ';
 	int count1 = 0;
@@ -34,29 +36,34 @@ int main() {
 			count2++;
 		}
 		else{
-			x = c - '0';
-			s1.push(x);   //push element to the stack
+			//x = c - '0';
+			s1.push(c);   //push element to the stack
 			count1++;
 			}
-		for(int i = 0; i < count1; i++){
-			x = s1.pop();
-			s2.push(x);
 		}
+		while(!s1.isEmpty()){		 //reverse the stack
+					c = s1.pop();
+					s2.push(c);
 	}
-	s1.pop();      //first pop the null element
-	s3.pop();
+		while(!s3.isEmpty()){		 //reverse the stack
+						c = s3.pop();
+						s4.push(c);
+		}
+
 
 	cout << "postfix: ";
 
-	for (int i = 0; count1; i++){
-		x = s2.pop();
-		cout << x;
+	while(!s2.isEmpty()){
+		c = s2.pop();
+		cout << c;
 	}
-	for (int i = 0; count1; i++){
-		d = s3.pop();
-		cout << d;
+
+	while(!s4.isEmpty()){
+		c = s4.pop();
+		cout << c;
 		}
-	cout << "value: ";
+
+	cout << endl << "value: ";
 
 
 	return 0;
